@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: lukas
+  password: 8ao71em87sc
+
+development:
+  <<: *default
+  database: exporails_development
+  username: lukas
+  password: 8ao71em87sc
+
+test:
+  <<: *default
+  database: exporails_test
+
+production:
+  <<: *default
+  database: exporails_production
